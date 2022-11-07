@@ -50,13 +50,14 @@ out on minute details. For example, in image set 2, the test image missed the ro
 rest of the image correct I would consider it a success.
 
 My second metric for analyzing the success of the training is the training and validation loss graph.
-![image](https://user-images.githubusercontent.com/69495267/200221472-3fdbfd0d-76c4-43af-96a1-5c11c8ecec55.png)
+![image](https://user-images.githubusercontent.com/69495267/200436061-9f0a1210-4f65-4800-9392-381e3df06c10.png)
 
 The graph clearly depicts that as the number of epochs increases, the loss decreases. This is a very good sign because it shows that the model
 is actually training, and that the more the model trains itself, the better it gets at predicting.
 
 My third metric for analyzing the success of the training is the precision vs. recall graph.
-![image](https://user-images.githubusercontent.com/69495267/200221609-9487961d-f1c8-4efc-9c78-9e0ab9f0563a.png)
+
+![image](https://user-images.githubusercontent.com/69495267/200436106-b785c6f2-55c7-4fef-8fe8-97d795ba9581.png)
 
 In the graph, the precision and recall both start very low which is most likely caused by the early inaccuracy of the model. However, the precision
 increases very quickly. Then as recall starts to increase, the precision decreases at certain points. This is a balancing act of trying to recall as
