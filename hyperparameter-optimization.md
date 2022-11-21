@@ -14,7 +14,7 @@ For my annealing method I was looking to optimize three hyperparameters which ar
 
 Results Obtained:
 
-My first metric for analyzing the success of the training is the predicted mask. 
+My first metric for analyzing the success of the training is the predicted mask.
 ![image](https://user-images.githubusercontent.com/69495267/203020753-a7c8fc46-b6ba-4512-9ff9-f16d719201cf.png)
 ![image](https://user-images.githubusercontent.com/69495267/203020819-1d842654-e144-4371-831c-9908b463455b.png)
 ![image](https://user-images.githubusercontent.com/69495267/203020835-cf96db42-1a1d-4041-a34a-0b7932642b51.png)
@@ -26,13 +26,15 @@ My first metric for analyzing the success of the training is the predicted mask.
 ![image](https://user-images.githubusercontent.com/69495267/203020923-2829c1de-2215-49d0-b016-67573e632af2.png)
 ![image](https://user-images.githubusercontent.com/69495267/203020941-f7ceca94-c454-4d18-ae00-bf6d22954e56.png)
 
-In regards to the images obtained by the semantic segmentation using the annealing method, most of the images came out very close to their testing label counterpart. It seems that similar to the semantic segmentation plot without hyperparamater optimization, the hadrdest identifier to predict correctly was the road. For example in the second image, the road that is covered by the sand is completely missed. It is quite impressive that the images were able to come out close, if not better, to the images in milestone 2 which was trained using double the epochs.
+In regards to the images obtained by the semantic segmentation using the annealing method, most of the images came out very close to their testing label counterpart. It seems that similar to the semantic segmentation plot without hyperparameter optimization, the hardest identifier to predict correctly was the road. For example in the second image, the road that is covered by the sand is completely missed. It is quite impressive that the images were able to come out close, if not better, to the images in milestone 2 which was trained using double the epochs.
 
-My second metric for analyzing the success of the training is the training and validation loss graph. 
-![image](https://user-images.githubusercontent.com/69495267/203031515-ab969736-6b6f-4f7a-ba01-2bbe330dfffb.png)
+My second metric for analyzing the success of the training is the training and validation loss graph.
+![image](https://user-images.githubusercontent.com/69495267/203032274-e3002a75-bcf3-4f55-aff1-392c6812055e.png)
 
-The val loss and loss vs epoch graph did not come out out as pleasantly as expected due to an error in the training. The error was most likely caused by the learning rate hyperparameter which was 1. The learning rate I used in the previous milestone was 0.01, so it makes sense that the graph for lr=1 would not be as smooth. Nonetheless, the graph still follows a downward trend meaning that as the model iterates over more epoch, the model is learning from itself and lowering loss.
+The val loss and loss vs epoch graph did not come out as pleasantly as expected due to an error in the training. The error was most likely caused by the learning rate hyperparameter which was 1. The learning rate I used in the previous milestone was 0.01, so it makes sense that the graph for lr=1 would not be as smooth. Nonetheless, the graph still follows a downward trend meaning that as the model iterates over more epochs, the model is learning from itself and lowering loss.
 
 My third metric for analyzing the success of the training is the precision vs. recall graph.
 
-![image](https://user-images.githubusercontent.com/69495267/203021885-5b4c37c2-abec-4a32-8951-db93b80af073.png)
+![image](https://user-images.githubusercontent.com/69495267/203032398-c215ff20-4a86-4421-8c9a-64902b26371d.png)
+
+Analyzing the precision vs recall graph produced from this model, it is apparent that a larger learning rate produces a much different graph. In the P vs. R graph from milestone 2, the graph was much closer to resembling a square root of x graph. This is most likely because the model trains slowly so the low accuracy causes low precision. In this precision recall graph, it is much more linear because the learning rate is taking much larger steps. A high precision and recall value are able to be obtained quicker; however, the precision suffers due to low accuracy. The recall value is also observed to be much higher because a higher learning rate would result in more values being accepted as truth values.
